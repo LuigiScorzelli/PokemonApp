@@ -1,0 +1,17 @@
+<div class="section">
+  <div class="field">
+    <label class="label">Username (<strong>user</strong>)</label>
+    <div class="control">
+      <input type="text" class="input" placeholder="es. user" #user>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Password (<strong>password</strong>)</label>
+    <div class="control">
+      <input type="password" class="input" #password>
+    </div>
+  </div>
+
+  <button class="button is-dark is-outlined" (click)="login(user.value, password.value)">Log In</button>
+</div>

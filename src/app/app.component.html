@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="section">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a [routerLink]="['/home']" class="navbar-item">
+          <h1 class="title is-5">Pokemon App</h1>
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="myNavbar">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="myNavbar" class="navbar-menu">
+        <div class="navbar-start">
+          <a [routerLink]="['/home']" class="navbar-item">
+            Home
+          </a>
+
+          <a [routerLink]="['/types']"class="navbar-item">
+            Types
+          </a>
+
+          <a [routerLink]="['/search']"class="navbar-item">
+            Search
+          </a>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a *ngIf="!authService.isLoggedIn()" [routerLink]="['/login']" class="button is-light">
+                Log in
+              </a>
+              <a *ngIf="authService.isLoggedIn()" class="button is-light" (click)="logout()">
+                Logout
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

@@ -1,0 +1,16 @@
+<div class="section">
+  <h2 class="subtitle is-4">Types page</h2>
+
+  <div style="margin-top: 40px;">
+    <div class="columns is-multiline">
+      <div class="column is-4" *ngFor="let type of types">
+        <article class="message is-dark">
+          <div class="message-body">
+            <p class="subtitle is-5 has-text-weight-bold">{{type.name}}</p>
+            <button [routerLink]="['/types', type.name]" class="button is-small is-primary">Dettaglio</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>

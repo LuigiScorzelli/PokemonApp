@@ -1,0 +1,40 @@
+<div class="section">
+  <h2 class="subtitle is-4">Search page</h2>
+
+  <div class="field has-addons">
+    <div class="control is-expanded">
+      <input
+        class="input"
+        type="text"
+        placeholder="es. bulbasaur"
+        [value]="q"
+        (keydown.enter)="submit(query.value)"
+        #query>
+    </div>
+    <div class="control">
+      <button
+        type="submit"
+        class="button is-dark"
+        (click)="submit(query.value)">Submit</button>
+    </div>
+  </div>
+
+  <div *ngIf="results" style="margin-top: 40px;">
+    <div *ngIf="results.length === 0">
+      <p class="subtitle is-5">No results found.</p>
+    </div>
+    <div *ngIf="results.length > 0">
+      <div class="columns is-multiline">
+        <div class="column is-4" *ngFor="let pokemon of results">
+          <article class="message is-primary">
+            <div class="message-body">
+              <p class="subtitle is-5 has-text-weight-bold">{{pokemon.name}}</p>
+              <button [routerLink]="['/pokemon', pokemon.name]" class="button is-small is-primary">Dettaglio</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
